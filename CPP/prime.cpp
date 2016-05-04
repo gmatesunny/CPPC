@@ -28,7 +28,7 @@ void primeGen(int n){
 	}
 
 
-int main(){
+int main(int argc, char **argv){
 	int n;
 	cout << " Enter upper limit" << endl;
 	cin >> n;
