@@ -19,11 +19,9 @@ void primeGen(int n){
 			}
 		}
 	}
-		for(set<int>::iterator iter = primes.begin(); iter != primes.end();
-				 ++iter){
-
+	for(set<int>::iterator iter = primes.begin();
+		iter != primes.end(); ++iter){
 			cout << *iter << " ";
-
 		}
 	}
 
