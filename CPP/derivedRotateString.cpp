@@ -6,7 +6,7 @@
 using namespace std;
 
 bool extraSpaceCheck(string in, string out) {
-    if ((in + in).find(out) != -1) {
+    if ((in + in).find(out) != string::npos) {
         return true;
     }
     return false;
