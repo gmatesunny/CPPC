@@ -31,5 +31,16 @@ int main(int argc, char *argv[]){
     for(int *i = a; i <= end; i++)
         cout << *i << " ";
 
+    vector<int> s{2, 3, 2, 5, 6, 2, 3, 6, 5, 9};
+    for (auto i = s.begin(), j = s.end() - 1; i < j; ++i) {
+        for (auto k = i + 1; k <= j; ++k) {
+            if (*k == *i) {
+                *k = *j;
+                s.pop_back();
+                j--;
+            }
+        }
+    }
+
     return 0;
     }
