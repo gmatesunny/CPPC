@@ -1,3 +1,5 @@
+// russianPeasant.cpp : Defines the entry point for the console application.
+//
 
 #include <iostream>
 #include <vector>
@@ -13,16 +15,12 @@ int main()
 	srand(time(NULL));
 	vector<int> pb = { 30, 10, 20, 15, 25 };
 	vector<int> csum = { 30, 40, 60, 75, 100 };
-	
-	
-
-
 	int i = 10;
 	while (i > 0) {
-	int r = rand() % 100 + 1;
-	int low = 0;
-	int high = csum.size() - 1;
-	cout << "Random Number: " << r << endl;
+		int r = rand() % 100 + 1;
+		int low = 0;
+		int high = csum.size() - 1;
+		cout << "Random Number: " << r << endl;
 		while (low <= high)
 		{
 			int mid = (low + high) / 2;
@@ -42,9 +40,6 @@ int main()
 		}
 		--i;
 	}
-
-
-
 	getchar();
 	return 0;
 }
