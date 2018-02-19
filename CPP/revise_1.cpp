@@ -48,3 +48,42 @@ int main()
     return 0;
 }
 
+//2
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class check{
+private:
+    static int i;
+public:
+    check()
+    {
+        ++i;
+    }
+    ~check()
+    {
+        --i;
+    }
+
+    static void display()
+    {
+        cout << i << endl;
+    }
+
+};
+
+int check::i = 0;
+
+int main()
+{
+    check a,b,c;
+    check::display();
+    check *d = new check();
+    check::display();
+    delete d;
+    check::display();
+    return 0;
+}
+
