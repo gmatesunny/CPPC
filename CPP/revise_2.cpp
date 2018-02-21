@@ -133,3 +133,20 @@ int main()
     list.print_list();
     return 0;
 }
+
+
+//reverse iterative 5 lines in while
+
+    void List::reverse()
+    {
+        Node *n1, *n2=NULL, *n3=NULL;
+        n1 = head;
+        while(n1!=NULL)
+        {
+            head = n1;
+            n2 = n1->next;
+            n1->next = n3;
+            n3 = n1;
+            n1 = n2;
+        }
+    }
