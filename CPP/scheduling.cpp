@@ -134,5 +134,64 @@ int main()
     findavgTime(proc, n);
 }
 --------------------------------------------------------------------------------------------------------------
-    
-    
+ //https://www.geeksforgeeks.org/program-round-robin-scheduling-set-1/
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Process{
+    int pid;
+    int bt;
+};
+
+void findWaitingTime(Process proc[], int wt[], int n, int quantum)
+{
+    int rem_bt[n], t = 0, complete = 0; //remaining time
+    for(int i=0;i<n;i++)
+    {
+        rem_bt[i] = proc[i].bt;
+    }
+    while(complete != n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            if(rem_bt[i] > 0)
+            {
+                if(rem_bt[i] > quantum)
+                {
+                    rem_bt[i] = rem_bt[i] - quantum;
+                    t = t+quantum;
+                }
+                else
+                {
+                    t = t+ rem_bt[i];
+                    rem_bt[i] = 0;
+                    wt[i] = t - proc[i].bt;    
+                    complete++;                
+                }
+            }            
+        }
+    }
+}
+
+
+
+void findavgTime(Process proc[], int n, int quantum)
+{
+    int wt[n], tat[n], total_wt = 0, total_tat = 0;
+    findWaitingTime(proc, wt, n, quantum);
+
+    for(int i=0;i<n;i++)
+    {
+        cout << i << "th process waiting time" << wt[i] << endl;
+    }
+}
+
+int main()
+{
+    Process proc[] = {{1,10},
+    {2,5},
+    {3,8}};
+    int n = sizeof proc/sizeof proc[0];
+    int quantum = 2;
+    findavgTime(proc, n, quantum);
+}
