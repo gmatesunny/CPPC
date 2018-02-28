@@ -65,4 +65,74 @@ int main()
     return 0;
 }
 -------------------------------------------------------------------
+//https://www.geeksforgeeks.org/program-shortest-job-first-scheduling-set-2srtf-make-changesdoneplease-review/
+#include <bits/stdc++.h>
 
+struct Process{
+    int pid;
+    int bt;
+    int art;
+};
+
+void findWaitingTime(Process proc[], int wt[], int n)
+{
+    int rt[n]; //remaining time
+    for(int i=0;i<n;i++)
+    {
+        rt[i] = proc[i].bt;
+    }
+    int complete = 0, t=0, minm = INT_MAX;
+    int shortest = 0, finish_time;
+    bool check = false;
+
+    while(complete != n)
+    {
+        for(int j=0;j<n;j++)
+        {
+            if((proc[j].art <=t) && (rt[j] < minm) && (rt[j]> 0)) //checking at t, if any prcocess is there with lower rt an
+            {
+                minm = rt[j];
+                shortest = j;
+                check = true;
+            }
+        }
+        if(check == false) //if any process has not yet arrived 
+        {
+            t++;
+            continue;
+        }
+
+        rt[shortest]--;
+        minm = rt[shortest];
+        if(minm == 0 )
+        {
+            minm = INT_MAX;
+            complete++;
+            finish_time = t+1;
+            wt[shortest] = finish_time - proc[shortest].bt - proc[shortest].art;   
+        }
+        t++;
+    }
+}
+
+
+
+void findavgTime(Process proc[], int n)
+{
+    int wt[n], tat[n], total_wt = 0, total_tat = 0;
+    findWaitingTime(proc, wt, n);
+}
+
+int main()
+{
+    Process proc[] = {{1,6,1},
+    {2,8,1},
+    {3,7,2},
+    {4,3,3}};
+
+    int n = sizeof proc/sizeof proc[0];
+    findavgTime(proc, n);
+}
+--------------------------------------------------------------------------------------------------------------
+    
+    
