@@ -1,4 +1,4 @@
-#include "../drafts/zmq/include/headers.hpp"
+// #include "../drafts/zmq/include/headers.hpp"
 
 #include <thread>
 #include <boost/algorithm/string.hpp>
@@ -6,7 +6,7 @@
 #include <future>
 
 #include <numeric>
-#include "include/series.hpp"
+#include "series.hpp"
 
 using namespace std;
 using namespace boost::program_options;
