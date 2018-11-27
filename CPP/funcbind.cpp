@@ -20,6 +20,9 @@ void print_add(int i)
 int main()
 {
     Foo foo(8);
+   
+    std::function<void(const Foo&, int)> f_add_display = &Foo::print_add;
+    f_add_display(foo, 1);
 
     std::function<void()> f_display_1 = std::bind(print_add, 1);
     f_display_1();
