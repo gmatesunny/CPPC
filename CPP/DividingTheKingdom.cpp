@@ -20,9 +20,11 @@ N and M are integers within the range [1..100,000];
 K is an integer within the range [1..100,000];
 each element of array X is an integer within the range [0..N−1];
 each element of array Y is an integer within the range [0..M−1].
+
+solution:
+The idea is very simple to find whether:
+if sum upto a particular row/col == total - (sum upto a particular row/col) the counter++
 */
-
-
 #include <map>
 
 using namespace std;
