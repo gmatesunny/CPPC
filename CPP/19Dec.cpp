@@ -4,10 +4,10 @@ using namespace std;
 int main() {
 
 	int32_t tc{0};
-  cin >> tc;
+  	cin >> tc;
 	while(tc--)
 	{
-	    int32_t n{0}, d{0}, n1{0}, n2{0}, nValue{0}, j{2};
+	int32_t n{0}, d{0}, n1{0}, n2{0}, nValue{0}, j{2};
     	cin >> n1 >> n2;
     	cin >> n;
     	d = n2-n1;
