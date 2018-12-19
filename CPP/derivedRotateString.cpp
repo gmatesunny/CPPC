@@ -2,8 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
+#include <thread>
 using namespace std;
+
 
 
 bool extraSpaceCheck(string in, string out) {
@@ -34,10 +35,5 @@ int main() {
         cout << "extraSpaceCheck: No, they are not rotating substring." << endl;
     }
 
-    if ((in.length() == out.length()) && checkRotate(in, out)) {
-        cout << "checkRotate: Yes, they are rotating substring." << endl;
-    } else {
-        cout << "checkRotate: No, they are not rotating substring." << endl;
-    }
     return 0;
 }

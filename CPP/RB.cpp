@@ -1,7 +1,6 @@
 // ConsoleApplication2.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include <iostream>
 #include <queue>
 #include <memory>
@@ -11,8 +10,8 @@ enum Color {RED, BLACK};
 
 struct Node
 {
-	int data;
-	bool color;
+	int data{0};
+	bool color{false};
 	Node *left, *right, *parent;
 
 	Node(int data):data(data) 

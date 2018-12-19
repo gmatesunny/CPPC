@@ -26,7 +26,8 @@ The idea is very simple to find whether:
 if sum upto a particular row/col == total - (sum upto a particular row/col) the counter++
 */
 #include <map>
-
+#include <vector>
+#include <iostream>
 using namespace std;
 
 int solution(int n, int m, vector<int> &x, vector<int> &y)
@@ -69,6 +70,6 @@ int main()
     vector<int> x{0,4,2,0};
     vector<int> y{0,0,1,4};
     
-    cout << solution(5,5,x,y);
+    std::cout << solution(5,5,x,y);
     return 0;
 }   
