@@ -1,9 +1,10 @@
-#include <string>
-#include <iostream>
-#include <vector>
 #include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
 using namespace std;
+
 
 bool extraSpaceCheck(string in, string out) {
     if ((in + in).find(out) != string::npos) {
